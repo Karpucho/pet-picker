@@ -1,15 +1,44 @@
-const animal = document.getElementById('animalName');
-
-document.addCardForm?.addEventListener('submit', async (event) => {
+// Регистрация юзера, слушаем данные с формы регистрации, отдаем на сервер в json,
+// при успехе рисуем главную
+document.registrationForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   const { method, action } = event.target;
 
   const body = {
-    home: event.target.home.value,
-    money: event.target.money.value,
-    time: event.target.time.value,
-    location: event.target.location.value,
+    name: event.target.name.value,
+    email: event.target.email.value,
+    password: event.target.password.value,
+  };
+
+  try {
+    const response = await fetch(action, {
+      method,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
+    const registrationResponse = await response.json();
+
+    if (registrationResponse.success) {
+      alert(registrationResponse.message);
+      window.location.href = registrationResponse.url;
+    } else {
+      alert(registrationResponse.message);
+    }
+  } catch (event) {
+    alert('Что-то пошло не так');
+  }
+});
+
+document.loginForm?.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const { method, action } = event.target;
+  const body = {
+    email: event.target.email.value,
+    password: event.target.password.value,
   };
 
   const response = await fetch(action, {
@@ -19,17 +48,12 @@ document.addCardForm?.addEventListener('submit', async (event) => {
     },
     body: JSON.stringify(body),
   });
-  const soundResponse = await response.json();
+  const loginResponse = await response.json();
 
-  console.log(soundResponse.message[0].name, soundResponse.message[1].name, 'на клиент');
-
-  soundResponse.message.forEach((element) => {
-    const beast = document.createElement('div');
-    beast.innerText = element.name;
-    animal.appendChild(beast);
-  });
-  // alert(soundResponse.message);
-  // animal.innerText = soundResponse.message[0].name;
-  // console.log(soundResponse.message);
-  // window.location.href = soundResponse.url;
+  if (loginResponse.success) {
+    alert(loginResponse.message);
+    window.location.href = loginResponse.url;
+  } else {
+    alert('Не удалось авторизоваться!');
+  }
 });
