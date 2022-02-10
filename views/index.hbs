@@ -1,0 +1,16 @@
+
+{{!-- {{else}}
+<p>Чтобы опубликовать свой звук, пожалуйста, зарегистрируйтесь.</p>
+{{/if}} --}}
+<h2>Популярные звуки:</h2>
+{{#each soundsAll}}
+  <div class="onecard">
+  <ul class="cart">
+    <li name="descriptionContainer">{{this.User.name}} запостил:</li>
+    <div class="sounds">
+       <li class="nameContainer">{{this.text}}</li>
+      <li name="descriptionContainer"><img src="{{this.photo}}" alt="place_for_pic"></li>
+    </div>
+  </ul>
+  </div>
+{{/each}}
