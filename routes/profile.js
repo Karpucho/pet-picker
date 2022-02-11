@@ -3,7 +3,7 @@ const { Animal } = require('../db/models');
 
 router.get('/', async (req, res) => {
   const currentUser = req.session.user.id;
-  const soundsByUser = await Animal.findAll(
+  const animalsByUser = await Animal.findAll(
     {
       where: {
         user_id: currentUser,
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
   res.render('profile', {
     name: req.session.user.name,
     isAuthorized: req.session.isAuthorized,
-    soundsByUser,
+    animalsByUser,
   });
 });
 
