@@ -13,8 +13,8 @@ const {
 const registrationRouter = require('./routes/registration');
 const loginRouter = require('./routes/login');
 const logoutRouter = require('./routes/logout');
-// const profileRouter = require('./routes/profile');
-const soundRouter = require('./routes/select_animal');
+const profileRouter = require('./routes/profile');
+const selectRouter = require('./routes/select_animal');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -45,8 +45,8 @@ app.use(express.json());
 app.use('/registration', registrationRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
-// app.use('/profile', profileRouter);
-app.use('/formAnimal', soundRouter);
+app.use('/profile', profileRouter);
+app.use('/formAnimal', selectRouter);
 
 app.get('/', async (req, res) => {
   // const soundsAll = await Sound.findAll({

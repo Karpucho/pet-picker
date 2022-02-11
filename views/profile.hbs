@@ -1,0 +1,12 @@
+<h3>Мои звуки</h3>
+  {{#each soundsByUser}}
+  <div class="onecard">
+  <ul class="cart">
+    <div class="cards">
+      <li class="nameContainer">{{this.text}}</li>
+      <li name="descriptionContainer"><img src="{{this.photo}}" alt="place_for_pic"></li>
+    </div>
+      <br><button type="submit" class="buttonDelete" data-id="{{id}}">Удалить</button>
+  </ul>
+</div>
+{{/each}}

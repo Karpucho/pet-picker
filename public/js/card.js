@@ -22,6 +22,7 @@ document.addCardForm?.addEventListener('submit', async (event) => {
   const soundResponse = await response.json();
 
   // console.log(soundResponse.message[0].name, soundResponse.message[1].name, 'на клиент');
+  animal.innerText = '';
 
   soundResponse.message.forEach((element) => {
     const beastPhoto = document.createElement('img');
@@ -38,4 +39,26 @@ document.addCardForm?.addEventListener('submit', async (event) => {
   // animal.innerText = soundResponse.message[0].name;
   // console.log(soundResponse.message);
   // window.location.href = soundResponse.url;
+});
+
+const deleteSounds = document.querySelectorAll('.buttonDelete');
+
+deleteSounds?.forEach((button) => {
+  button.addEventListener('click', async (event) => {
+    event.preventDefault();
+
+    const soundId = button.dataset.id;
+
+    const action = `profile/${soundId}`;
+
+    const response = await fetch(action, {
+      method: 'DELETE',
+    });
+
+    const deletedSound = await response.json();
+
+    document.querySelector('.cart').remove();
+    alert(deletedSound.message);
+    window.location.href = deletedSound.url;
+  });
 });
