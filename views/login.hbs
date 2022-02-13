@@ -1,9 +1,16 @@
-<h3>Авторизация</h3>
 <form method="POST" action="/login" name="loginForm" class="form">
-  <div>
-    <input name="email" type="text" placeholder="Email" required>
+  <div class="container">
+    <h2 class="autoReg">Авторизация</h2>
+    <hr>
+   <div>
+    <label for="email">Email:</label>
+    <input class="inputForm" name="email" type="email" placeholder="Email" required>
+   </div>
+   <div>
+     <label for="password">Пароль:</label>
+     <input class="inputForm" name="password" type="password" minlength="8" placeholder="Password" required>
+   </div>
+   <hr>
+   <br><button type="submit" class="login-button">Войти</button>
   </div>
-  <div><input name="password" type="password" minlength="8" placeholder="Пароль" required>
-  </div>
-  <br><button type="submit">Войти</button>
 </form>

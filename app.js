@@ -8,8 +8,6 @@ const {
   sequelize,
 } = require('./db/models');
 
-// const { Sound, User } = require('./db/models');
-
 const registrationRouter = require('./routes/registration');
 const loginRouter = require('./routes/login');
 const logoutRouter = require('./routes/logout');
@@ -49,13 +47,9 @@ app.use('/profile', profileRouter);
 app.use('/formAnimal', selectRouter);
 
 app.get('/', async (req, res) => {
-  // const soundsAll = await Sound.findAll({
-  //   include: User,
-  // });
   res.render('index', {
     isAuthorized: req.session?.isAuthorized,
     name: req.session.user?.name,
-    // soundsAll,
   });
 });
 

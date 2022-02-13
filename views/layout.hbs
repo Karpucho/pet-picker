@@ -7,25 +7,23 @@
   <title>MyLittleBrother</title>
   <script defer src="/js/client.js"></script>
   <script defer src="/js/card.js"></script>
-  {{!-- <link rel="stylesheet" href="/style/mystyle.css"> --}}
+  <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
 <header>
-  <h1>My Little Brother</h1>
-      <nav>
-        <ul>
+  <h1 class="heading">My Little Brother</h1>
+        <ul class="mainList">
           {{#if isAuthorized}}
-            <h4>Привет, {{{name}}}!</h4>
             <li><a href="/">Главная</a></li>
             <li><a href="/profile">Мои звери</a></li>
             <li><a href="/formAnimal">Форма</a></li>
             <li><a href="/logout">Выйти</a></li>
           {{else}}
+            <li><a href="/">Главная</a></li>
             <li><a href="/login">Войти</a></li>
             <li><a href="/registration">Зарегистрироваться</a></li>
           {{/if}}
         </ul>
-    </nav>
 </header>
  {{{body}}}
 </body>

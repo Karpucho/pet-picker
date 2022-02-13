@@ -1,42 +1,48 @@
-<div>
-{{#if isAuthorized}}
-  <h3>Новый звук:</h3>
-<form method="POST" action="/formAnimal" name="addCardForm" class="addCard">
-  <span>Где живешь?</span>
-  <br>
-  <select name="home">
-    <option value="1">Человейник</option>
-    <option value="2">Домяра, участок и все такое</option>
-  </select>
-  <br>
-  <span>Чё по деньгам?</span>
-  <br>
-  <select name="money">
-    <option value="1">Последний ... без соли доедаю</option>
-    <option value="2">Жить можно</option>
-    <option value="3">'Bezos mode'</option>
-  </select>
-  <br>
-  <span>Время есть?</span>
-  <br>
-  <select name="time">
-    <option value="1">Нет времени читать эту писанину</option>
-    <option value="2">Немного есть</option>
-    <option value="3">Времени в достатке</option>
-  </select>
-  <br>
-  <span>Как погодка?</span>
-  <br>
-  <select name="location">
-    <option value="1">Жарко</option>
-    <option value="2">Холодно</option>
-  </select>
-  <br><button type="submit">Выбрать зверя!</button>
-</form>  
+
+<div class="formAnimal">
+  {{#if isAuthorized}}
+    <h3>Давай выберем тебе питомца!</h3>
+  <div class="inForm">Укажи поля наиболее соответствующие твоему текущему положению:</div>
+  <form method="POST" action="/formAnimal" name="addCardForm" class="addCard">
+    <span>Где живешь?</span>
+    <br>
+    <select name="home" required>
+      <option selected disabled>Каковы твои жилищные условия</option>
+      <option value="1">Человейник</option>
+      <option value="2">Домяра, участок и все такое</option>
+    </select>
+    <br>
+    <span>Чё по деньгам?</span>
+    <br>
+    <select name="money" required>
+      <option selected disabled>Выбери свой уровень достатка</option>
+      <option value="1">Последний х.. без соли доедаю</option>
+      <option value="2">Жить можно</option>
+      <option value="3">'Bezos mode'</option>
+    </select>
+    <br>
+    <span>Время есть?</span>
+    <br>
+    <select name="time" required>
+      <option selected disabled>Имеется ли у тебя свободное время</option>
+      <option value="1">Нет времени читать эту писанину</option>
+      <option value="2">Есть чутка</option>
+      <option value="3">Времени в достатке</option>
+    </select>
+    <br>
+    <span>Как погодка?</span>
+    <br>
+    <select name="location" required>
+      <option selected disabled>В какой климатической зоне ты проживаешь</option>
+      <option value="1">Жарко</option>
+      <option value="2">Холодно</option>
+    </select>
+    <br><button class="btnAnimal" type="submit">Выбрать зверя!</button>
+  </form>  
 </div>
   {{else}}
 <p>что то</p>
 {{/if}}
-<div id="animalName">
+<div class="animalName">
 
 </div>

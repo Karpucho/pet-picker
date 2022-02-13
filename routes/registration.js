@@ -2,7 +2,6 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const { User } = require('../db/models');
 
-// Сервер рисует форму регистрации при переходе по ссылке на регистрацию
 router.get('/', (req, res) => {
   res.render(
     'registration',
@@ -10,8 +9,6 @@ router.get('/', (req, res) => {
   );
 });
 
-// Сервер создает карточку в базе, данные приходят с формы регистрации по методу post
-// fetch приходит с client.js
 router.post('/', async (req, res) => {
   const { name, email, password } = req.body;
 

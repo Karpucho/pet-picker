@@ -1,12 +1,15 @@
-<h3>Мои звери:</h3>
+<div class="formAnimal">Мой зверинец:</div>
+ <div class="animalByUser formAnimal">
   {{#each animalsByUser}}
   <div class="onecard">
   <ul class="cart">
     <div class="cards">
-      <li class="nameContainer">{{this.text}}</li>
+      
       <li name="descriptionContainer"><img src="{{this.photo}}" alt="place_for_pic"></li>
+      <li class="nameContainer">{{this.text}}</li>
     </div>
-      <br><button type="submit" class="buttonDelete" data-id="{{id}}">Удалить</button>
+    <br><button type="submit" class="buttonDelete" data-id="{{id}}">Удалить</button>
   </ul>
+ </div>
+ {{/each}}
 </div>
-{{/each}}

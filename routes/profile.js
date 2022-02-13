@@ -24,7 +24,7 @@ router.delete('/:id', async (req, res) => {
   await Animal.destroy({
     where: { id: soundId },
   });
-  res.json({ url: '/profile', message: 'Звук удален' });
+  res.json({ url: '/profile', message: 'Карточка зверя удалена' });
 });
 
 module.exports = router;

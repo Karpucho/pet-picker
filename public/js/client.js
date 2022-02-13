@@ -1,5 +1,3 @@
-// Регистрация юзера, слушаем данные с формы регистрации, отдаем на сервер в json,
-// при успехе рисуем главную
 document.registrationForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
 
@@ -22,7 +20,7 @@ document.registrationForm?.addEventListener('submit', async (event) => {
     const registrationResponse = await response.json();
 
     if (registrationResponse.success) {
-      alert(registrationResponse.message);
+      // alert(registrationResponse.message);
       window.location.href = registrationResponse.url;
     } else {
       alert(registrationResponse.message);
@@ -51,7 +49,7 @@ document.loginForm?.addEventListener('submit', async (event) => {
   const loginResponse = await response.json();
 
   if (loginResponse.success) {
-    alert(loginResponse.message);
+    // alert(loginResponse.message);
     window.location.href = loginResponse.url;
   } else {
     alert('Не удалось авторизоваться!');

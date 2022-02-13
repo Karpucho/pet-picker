@@ -2,8 +2,6 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const { User } = require('../db/models');
 
-// Сервер рисует форму логина при переходе по ссылке на логин
-// ссылка на главной
 router.get('/', (req, res) => {
   res.render(
     'login',
@@ -11,8 +9,6 @@ router.get('/', (req, res) => {
   );
 });
 
-// Сервер чекает логин в базе, данные приходят с формы логина по методу post
-// fetch приходит с client.js
 router.post('/', async (req, res) => {
   const { email, password } = req.body;
 

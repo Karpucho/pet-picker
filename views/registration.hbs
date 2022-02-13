@@ -1,24 +1,28 @@
-<h2>Регистрация</h2>
 <form method="POST" action="/registration" name="registrationForm" class="form">
-  <div class="email">
+  <div class="container">
+    <h2>Регистрация</h2>
+    <hr>
+      <div class="email">
       <p>
         <label for="email">Email:</label>
-        <input type="email" name="email" id="email" placeholder="Email" required>
+        <input class="inputForm" type="email" name="email" id="email" placeholder="Email" required>
       </p>
     </div>
     <div class="userName">
       <p>
         <label for="name">Имя:</label>
-        <input type="text" name="name" id="name" placeholder="Ник" required>
+        <input class="inputForm" type="text" name="name" id="name" placeholder="Name" required>
       </p>
     </div>
     <div class="password">
       <p>
         <label for="password">Пароль:</label>
-        <input type="password" name="password" id="password" minlength="8" placeholder="Пароль">
+        <input class="inputForm" type="password" name="password" id="password" minlength="8" placeholder="Password">
       </p>
     </div>
+    <hr>
     <p class="login-submit">
       <button type="submit" class="login-button">Зарегистрироваться</button>
     </p>
+  </div>
 </form>

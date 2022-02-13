@@ -29,7 +29,7 @@ const crocodile = {
 };
 
 const stone = {
-  home: [1],
+  home: [1, 2],
   money: [1],
   time: [1],
   location: [2],
@@ -39,10 +39,10 @@ const stone = {
 };
 
 const cactus = {
-  home: [1],
-  money: [1],
+  home: [1, 2],
+  money: [1, 2, 3],
   time: [1],
-  location: [1],
+  location: [1, 2],
   name: 'Кактус',
   describe: 'Здесь описание',
   photo: 'https://www.boredpanda.com/blog/wp-content/uploads/2017/03/funny-dad-jokes-9-58d2487a7d4e3__700.jpg',
@@ -61,7 +61,7 @@ const fish = {
 const snail = {
   home: [1, 2],
   money: [2, 3],
-  time: [2, 3],
+  time: [1, 2, 3],
   location: [1, 2],
   name: 'Улитки',
   describe: 'Здесь описание',
@@ -101,7 +101,7 @@ const snake = {
 const turtle = {
   home: [1, 2],
   money: [2, 3],
-  time: [2, 3],
+  time: [1, 2, 3],
   location: [1, 2],
   name: 'Черепашка',
   describe: 'Здесь описание',
@@ -229,7 +229,7 @@ const racoon = {
 
 const minipig = {
   home: [1, 2],
-  money: [2, 3],
+  money: [3],
   time: [2, 3],
   location: [1],
   name: 'Минипиг',
@@ -241,7 +241,7 @@ const komondor = {
   home: [2],
   money: [2, 3],
   time: [2, 3],
-  location: [1, 2],
+  location: [2],
   name: 'Комондор',
   describe: 'Здесь описание',
   photo: 'https://u-f.ru/sites/default/files/styles/large/public/poroda_sobak.jpeg?itok=4kdPjSre',
@@ -251,10 +251,10 @@ const scorpio = {
   home: [1, 2],
   money: [2, 3],
   time: [2, 3],
-  location: [1, 2],
+  location: [1],
   name: 'Скорпион',
   describe: 'Здесь описание',
-  photo: 'https://ngzt.ru/uploads/ngzt/blog/illustration/image/45168/share_img-20161215175840-948.jpg',
+  photo: 'https://wallbox.ru/resize/800x480/wallpapers/main/201551/296c3575f7b89b3.jpg',
 };
 
 const cockroach = {
@@ -290,7 +290,7 @@ const chaychay = {
 const cat = {
   home: [1, 2],
   money: [2, 3],
-  time: [2, 3],
+  time: [1, 2, 3],
   location: [1, 2],
   name: 'Кошка',
   describe: 'Здесь описание',
@@ -299,12 +299,62 @@ const cat = {
 
 const goat = {
   home: [2],
-  money: [3],
+  money: [2, 3],
   time: [3],
   location: [1, 2],
   name: 'Козел',
   describe: 'Здесь описание',
   photo: 'https://sun9-25.userapi.com/impg/XkZfZC6E89R3XLbjFpNzoF2H-Hl3DhqPSvvHAQ/MuMG954vfWI.jpg?size=604x604&quality=96&sign=d938eec64160ef0698877c83b1538fde&type=album',
+};
+
+const retriver = {
+  home: [1, 2],
+  money: [2, 3],
+  time: [2, 3],
+  location: [1, 2],
+  name: 'Ретривер',
+  describe: 'Здесь описание',
+  photo: 'https://meupetfavorito.club/wp-content/uploads/2018/08/14461.jpg',
+};
+
+const labrador = {
+  home: [1, 2],
+  money: [2, 3],
+  time: [2, 3],
+  location: [1, 2],
+  name: 'Лабрадор',
+  describe: 'Здесь описание',
+  photo: 'https://cdn.pixabay.com/photo/2018/10/29/22/55/labrador-3782389_640.jpg',
+};
+
+const rotveler = {
+  home: [1, 2],
+  money: [2, 3],
+  time: [2, 3],
+  location: [1, 2],
+  name: 'Ротвейлер',
+  describe: 'Здесь описание',
+  photo: 'https://www.thepoke.co.uk/wp-content/uploads/2018/11/dogtreats-5.png',
+};
+
+const rat = {
+  home: [1, 2],
+  money: [1, 2, 3],
+  time: [1, 2, 3],
+  location: [1, 2],
+  name: 'Крыса',
+  describe: 'Здесь описание',
+  photo: 'https://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1RkOM0kIp5sPpRSqeT3tR5LF6aKTM5SRkZCeTgDn6uOyic',
+};
+
+const seapig = {
+  home: [1, 2],
+  money: [1, 2, 3],
+  time: [1, 2, 3],
+  location: [1, 2],
+  name: 'Морская свинка',
+  describe: 'Здесь описание',
+  photo: 'https://pbs.twimg.com/media/D9gp3X_XoAA73jV.png:large',
 };
 
 const arrAnimals = [
@@ -339,6 +389,12 @@ const arrAnimals = [
   chaychay,
   cat,
   goat,
+  retriver,
+  labrador,
+  rotveler,
+  rat,
+  seapig,
+  
 ];
 
 module.exports = arrAnimals;

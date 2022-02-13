@@ -16,7 +16,6 @@ router.post('/', async (req, res) => {
     time,
     location,
   } = req.body;
-
   try {
     const userid = req.session.user.id;
 
@@ -25,24 +24,18 @@ router.post('/', async (req, res) => {
         && animal.time.includes(+time)
         && animal.location.includes(+location));
 
-    // console.log(arr[0].name, 'на выход');
     arr.map(async (el) => {
-      // const createdAnimal = await Animal.create({
-      //   text: el.name,
-      //   photo: el.photo,
-      //   user_id: userid,
-      // });
-      // const createdAnimal = await Animal.findOrCreate({
-      //   where: {
-      //     text: el.name,
-      //     user_id: userid,
-      //   },
-      //   defaults: {
-      //     text: el.name,
-      //     photo: el.photo,
-      //     user_id: userid,
-      //   },
-      // });
+      const createdAnimal = await Animal.findOrCreate({
+        where: {
+          text: el.name,
+          user_id: userid,
+        },
+        defaults: {
+          text: el.name,
+          photo: el.photo,
+          user_id: userid,
+        },
+      });
     });
 
     res.json({
