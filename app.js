@@ -7,6 +7,7 @@ const FileStore = require('session-file-store')(expressSession);
 const {
   sequelize,
 } = require('./db/models');
+require('dotenv').config();
 
 const registrationRouter = require('./routes/registration');
 const loginRouter = require('./routes/login');
